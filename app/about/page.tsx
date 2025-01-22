@@ -5,7 +5,6 @@ import { MapPin, Github, Mail, FileText, Linkedin, Twitter } from "lucide-react"
 import { FadeIn } from "../components/FadeIn"
 import { BentoCard } from "../components/BentoCard"
 import { BentoImage } from "../components/BentoImage"
-import { BirthdayCountdown } from "../components/BirthdayCountdown"
 import { TechStack } from "../components/TechStack"
 import { sofiaSans } from "../utils/fonts"
 
