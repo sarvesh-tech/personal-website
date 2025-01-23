@@ -211,6 +211,45 @@ export default function ProjectsPage() {
           ))}
         </div>
       </main>
+            {/* Footer */}
+            <hr className="max-w-[90%] sm:max-w-[740px] mb-2 opacity-20 mx-auto" />
+      <footer className="py-6">
+        <div className="max-w-[750px] mx-auto flex flex-col text-xs sm:text-sm text-[rgb(var(--foreground))] opacity-60 space-y-4 px-4 sm:px-0 text-center">
+          <div className="text-sm font-semibold">Thanks for visiting :)</div>
+          <div>
+        Reach me at{" "}
+        <Link
+          href="mailto:sarvesh.tech04@gmail.com"
+          className="underline hover:opacity-70 transition-opacity"
+        >
+          sarvesh.tech04@gmail.com
+        </Link>
+          </div>
+          <div className="flex justify-center space-x-4">
+        <Link
+          href="/resume.pdf"
+          className="underline hover:opacity-70 transition-opacity"
+        >
+          Resume
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/sarvesh-karunakaran/"
+          className="underline hover:opacity-70 transition-opacity"
+        >
+          LinkedIn
+        </Link>
+        <Link
+          href="https://github.com/sarvesh-karunakaran"
+          className="underline hover:opacity-70 transition-opacity"
+        >
+          Github
+        </Link>
+          </div>
+          <div>
+        Made with <span className="text-red-500">&hearts;</span> by Sarvesh Karunakaran ©
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
