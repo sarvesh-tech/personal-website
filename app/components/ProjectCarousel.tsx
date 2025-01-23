@@ -14,7 +14,7 @@ const projects = [
     categories: ["React.js", "AWS", "Alteryx", "SQL"],
     image: "/lockheed-tn.png", // Thumbnail image
     video: "/lockheedvid.mp4", // Video to play on hover
-    href: "/projects/lockheed",
+    href: "/projects",
   },
   {
     id: "trade-ai",
@@ -24,7 +24,7 @@ const projects = [
     categories: ["React Native", "AI/ML", "Azure"],
     image: "/trade-tn.png", // Thumbnail image
     video: "/tradevid.mp4", // Video to play on hover
-    href: "/projects/trade-ai",
+    href: "/projects",
   },
   {
     id: "pipeiq",
@@ -34,7 +34,7 @@ const projects = [
     categories: ["Next.js", "AI/ML", "AWS", "Python"],
     image: "/pipeiq-tn.png", // Thumbnail image
     video: "/pipeiq-vid.mp4", // Video to play on hover
-    href: "/projects/pipeiq",
+    href: "/projects",
   },
   {
     id: "roblox-game",
@@ -44,7 +44,7 @@ const projects = [
     categories: ["Lua", "Game Dev", "UI/UX Design"],
     image: "/Roblox.jpg", // Thumbnail image
     video: "/roblox.gif", // GIF to play on hover
-    href: "/projects/roblox-game",
+    href: "/projects",
   },
 ]
 

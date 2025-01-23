@@ -38,11 +38,11 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
           {/* Introduction */}
           <BentoCard size="lg" className="md:col-span-2 md:row-span-2">
-            <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-            <p className="text-neutral-300 leading-relaxed">
+            <h2 className="text-xl font-semibold mb-4">About Me</h2>
+            <p className="text-sm text-neutral-300 leading-loose">
               Hey, I'm Sarvesh. I'm a software engineer building human-centered interfaces and digital experiences. With
-              a background in computer science and a keen eye for design, I strive to create innovative solutions that
-              make a real impact.
+              a background in computer engineering and a keen eye for design, I strive to create innovative solutions that
+              make a real impact. In my free time, you can find me playing pickleball or planning my next travel destination!
             </p>
           </BentoCard>
 
@@ -99,7 +99,7 @@ export default function About() {
                   <h3 className="font-medium">Software Engineer Intern @ Lockheed Martin</h3>
                   <p className="text-sm text-neutral-400">Developed aerospace software solutions</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">June 2021 - Aug 2021</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">June 2024 - Aug 2024</span>
               </div>
               <hr className="border-dotted border-neutral-400 opacity-30" />
               <div className="flex flex-col md:flex-row justify-between">
@@ -107,7 +107,7 @@ export default function About() {
                   <h3 className="font-medium">Software Engineer Intern @ PipeIQ</h3>
                   <p className="text-sm text-neutral-400">Built infrastructure management solutions</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Jan 2022 - May 2022</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">May 2023 - June 2023</span>
               </div>
             </div>
           </BentoCard>
@@ -121,7 +121,7 @@ export default function About() {
                   <h3 className="font-medium">Trade AI</h3>
                   <p className="text-sm text-neutral-400">Mobile trading assistant with AI-powered analysis</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Jan 2023 - Present</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Dec 2024 - Present</span>
               </div>
               <hr className="border-dotted border-neutral-400 opacity-30" />
               <div className="flex flex-col md:flex-row justify-between">

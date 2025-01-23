@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="px-6 pt-16 pb-24 max-w-[800px] mx-auto">
-        <FadeIn delay={500}>
+        <FadeIn delay={50}>
         <h1 className="text-5xl sm:text-7xl font-normal mb-4 sm:mb-8 leading-tight tracking-tighter">
           <span className="block sm:inline">Building</span>{" "}
           <span
@@ -72,7 +72,7 @@ export default function Home() {
           </h1>
         </FadeIn>
 
-        <FadeIn delay={1000}>
+        <FadeIn delay={150}>
           <div className="space-y-4 text-xs sm:text-sm leading-relaxed mb-6 max-w-[600px]">
             <p className="leading-loose">
               Howdy! I'm Sarvesh, a junior computer engineering student at{" "}
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={1500}>
+        <FadeIn delay={300}>
           <div className="flex space-x-6 mb-24">
             <Link
               href="/resume.pdf" // Replace with your resume link
@@ -126,14 +126,14 @@ export default function Home() {
               <span className="sr-only">Email</span>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/sarvesh-karunakaran/" // Replace with your LinkedIn profile
+              href="https://www.linkedin.com/in/sarveshkk/" // Replace with your LinkedIn profile
               className="text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity"
             >
               <Linkedin className="w-6 h-6" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
-              href="https://github.com/sarvesh-karunakaran" // Replace with your GitHub profile
+              href="https://github.com/sarvesh-tech" // Replace with your GitHub profile
               className="text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity"
             >
               <Github className="w-6 h-6" />
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={2000}>
+        <FadeIn delay={150}>
           <ProjectCarousel />
         </FadeIn>
       </main>
