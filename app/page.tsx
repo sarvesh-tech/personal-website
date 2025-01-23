@@ -121,6 +121,11 @@ export default function Home() {
             <Link
               href="mailto:sarvesh.tech04@gmail.com"
               className="text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity"
+              onClick={(e) => {
+              e.preventDefault()
+              navigator.clipboard.writeText("sarvesh.tech04@gmail.com")
+              alert("Email copied to clipboard!")
+              }}
             >
               <Mail className="w-6 h-6" />
               <span className="sr-only">Email</span>
@@ -169,13 +174,13 @@ export default function Home() {
           Resume
         </Link>
         <Link
-          href="https://www.linkedin.com/in/sarvesh-karunakaran/"
+          href="https://www.linkedin.com/in/sarveshkk"
           className="underline hover:opacity-70 transition-opacity"
         >
           LinkedIn
         </Link>
         <Link
-          href="https://github.com/sarvesh-karunakaran"
+          href="https://github.com/sarvesh-tech"
           className="underline hover:opacity-70 transition-opacity"
         >
           Github

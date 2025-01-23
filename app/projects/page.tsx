@@ -233,13 +233,13 @@ export default function ProjectsPage() {
           Resume
         </Link>
         <Link
-          href="https://www.linkedin.com/in/sarvesh-karunakaran/"
+          href="https://www.linkedin.com/in/sarveshkk"
           className="underline hover:opacity-70 transition-opacity"
         >
           LinkedIn
         </Link>
         <Link
-          href="https://github.com/sarvesh-karunakaran"
+          href="https://github.com/sarvesh-tech"
           className="underline hover:opacity-70 transition-opacity"
         >
           Github
