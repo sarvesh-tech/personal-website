@@ -30,7 +30,7 @@ const projects = [
     id: "pipeiq",
     icon: <Wrench className="w-6 h-6" />,
     title: "SWE Intern @ PipeIQ",
-    description: "Building software solutions for smart pipeline monitoring",
+    description: "Building software for AI-powered sales pipelines",
     categories: ["Next.js", "AI/ML", "AWS", "Python"],
     image: "/pipeiq-tn.png", // Thumbnail image
     video: "/pipeiq-vid.mp4", // Video to play on hover
