@@ -52,6 +52,61 @@ const projects = [
     github: "https://github.com/sarvesh-tech", // Add GitHub link
     web: "https://www.roblox.com/discover/" // Add web link
   },
+  {
+    id: "wingmates",
+    date: "2024",
+    title: "TAMUHack 2024: Wingmates",
+    description: "1st Place track award. Led development of full-stack mobile app to reduce cultural barriers while traveling. Integrated Firebase for real-time chat and location tracking, and Node.js for backend API. Implemented React Native for cross-platform compatibility, and Firebase Authentication for secure user management.",
+    tech: ["React Native", "Node.js", "Firebase", "MongoDB", "Python"],
+    image: "/wingmates-tn.png", // Thumbnail image
+    video: "/roblox.gif", // GIF to play on hover
+    github: "https://github.com/sarvesh-tech", // Add GitHub link
+    web: "https://www.roblox.com/discover/" // Add web link
+  },
+  {
+    id: "ScholarSync",
+    date: "2024",
+    title: "TidalHack 2024: ScholarSync",
+    description: "4th Place Overall. Developed a platform to connect students with mentors for personalized learning experiences. Utilized React.js for frontend development, Firebase for real-time data syncing, and Express.js for RESTful APIs. Designed a responsive UI/UX to enhance user engagement and learning outcomes.",
+    tech: ["React.js", "Firebase", "Express.js", "UI/UX Design"],
+    image: "/scholarsync-tn.png", // Thumbnail image
+    video: "/roblox.gif", // GIF to play on hover
+    github: "https://github.com/sarvesh-tech", // Add GitHub link
+    web: "https://www.roblox.com/discover/" // Add web link
+  },
+  {
+    id: "portfolio",
+    date: "2025",
+    title: "Portfolio Website",
+    description: "Developed a personal portfolio website to showcase projects and skills. Utilized Next.js for server-side rendering, and Tailwind CSS for responsive design. Integrated Vercel for seamless deployment and optimized performance.",
+    tech: ["Next.js", "Typescript", "Tailwind CSS", "Vercel", "UI/UX Design"],
+    image: "/portfolio-tn.png", // Thumbnail image
+    video: "/roblox.gif", // GIF to play on hover
+    github: "https://github.com/sarvesh-tech", // Add GitHub link
+    web: "https://www.roblox.com/discover/" // Add web link
+  },
+  {
+    id: "AirWallet",
+    date: "2023",
+    title: "Tamuhack 2023: AirWallet",
+    description: "2nd Place track award. Developed a webapp to help users save for flights by rounding up purchases; developed with HTML, CSS, JavaScript, Python, and MATLAB.",
+    tech: ["HTML", "CSS", "JavaScript", "Python", "MATLAB"],
+    image: "/airwallet-tn.png", // Thumbnail image
+    video: "/roblox.gif", // GIF to play on hover
+    github: "https://github.com/sarvesh-tech", // Add GitHub link
+    web: "https://www.roblox.com/discover/", // Add web link
+  },
+  {
+    id: "Tidal",
+    date: "2024",
+    title: "Tidal Organization Website",
+    description: "Led design & development of my organization's website to showcase events and resources. Utilized React.js for development. Accumulated over 1,000+ views and 300+ signups at our latest hackathon with company partners like AWS, NVIDIA, Pariveda, and Slalom.",
+    tech: ["React.js", "UI/UX Design"],
+    image: "/tidal-tn.png", // Thumbnail image
+    video: "/roblox.gif", // GIF to play on hover
+    github: "https://github.com/sarvesh-tech", // Add GitHub link
+    web: "https://www.roblox.com/discover/" // Add web link
+  }
 ]
 
 export default function ProjectsPage() {
