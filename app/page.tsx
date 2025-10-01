@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
       {/* Header */}
-      <header className="px-6 py-6 flex justify-between items-center max-w-[800px] mx-auto">
+      <header className="px-6 py-6 flex justify-between items-center max-w-[1200px] mx-auto">
         <Link
           href="/"
           className={`text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity text-xl ${sofiaSans.className} flex items-center`}
@@ -59,16 +59,17 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 pt-16 pb-24 max-w-[800px] mx-auto">
+      <main className="px-6 pt-16 pb-24 max-w-[1200px] mx-auto">
         <FadeIn delay={50}>
         <h1 className="text-5xl sm:text-7xl font-normal mb-4 sm:mb-8 leading-tight tracking-tighter">
-          <span className="block sm:inline">Building</span>{" "}
+          <span className="block">Building</span>{" "}
           <span
-            className={`block sm:inline ${stixTwoText.className} bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient-radial`}
+            className={`block ${stixTwoText.className} bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient-radial`}
+            style={{ backgroundSize: '53% 100%' }}
           >
             meaningful
           </span>{" "}
-          <span className="block sm:inline">interactions</span>
+          <span className="block">interactions</span>
           </h1>
         </FadeIn>
 
@@ -93,15 +94,19 @@ export default function Home() {
 
             <p className="leading-loose">
               Currently building a AI-powered trading mobile app{" "}
-              <Link href="#" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
+              <Link href="https://github.com/sarvesh-tech" target="_blank" rel="noopener noreferrer" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
                 @TradeAI
               </Link>
               . Previously interned{" "}
-              <Link href="#" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
+              <Link href="https://www.lockheedmartin.com/en-us/index.html" target="_blank" rel="noopener noreferrer" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
                 @Lockheed Martin
               </Link>
               ,{" "}
-              <Link href="#" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
+              <Link href="https://scale.com/" target="_blank" rel="noopener noreferrer" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
+                @Scale AI
+              </Link>
+              ,{" "}
+              <Link href="https://pipeiq.ai/" target="_blank" rel="noopener noreferrer" className="underline inline-flex items-center hover:opacity-70 transition-opacity">
                 @PipeIQ
               </Link>
               .
@@ -153,9 +158,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <hr className="max-w-[90%] sm:max-w-[740px] mb-2 opacity-20 mx-auto" />
+      <hr className="max-w-[90%] sm:max-w-[1200px] mb-2 opacity-20 mx-auto" />
       <footer className="py-6">
-        <div className="max-w-[750px] mx-auto flex flex-col text-xs sm:text-sm text-[rgb(var(--foreground))] opacity-60 space-y-4 px-4 sm:px-0 text-center">
+        <div className="max-w-[1200px] mx-auto flex flex-col text-xs sm:text-sm text-[rgb(var(--foreground))] opacity-60 space-y-4 px-4 sm:px-0 text-center">
           <div className="text-sm font-semibold">Thanks for visiting :)</div>
           <div>
         Reach me at{" "}

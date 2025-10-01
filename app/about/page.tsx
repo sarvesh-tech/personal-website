@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
       
-      <header className="px-6 py-6 flex justify-between items-center max-w-[800px] mx-auto">
+      <header className="px-6 py-6 flex justify-between items-center max-w-[1200px] mx-auto">
       <Link
       href="/"
       className={`text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity text-xl ${sofiaSans.className} flex items-center`}
@@ -34,7 +34,7 @@ export default function About() {
       </header>
 
 
-      <main className="px-6 py-12 max-w-[800px] mx-auto">
+      <main className="px-6 py-12 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
           {/* Introduction */}
           <BentoCard size="lg" className="md:col-span-2 md:row-span-2">
@@ -152,9 +152,9 @@ export default function About() {
         </div>
       </main>
             {/* Footer */}
-            <hr className="max-w-[90%] sm:max-w-[740px] mb-2 opacity-20 mx-auto" />
+            <hr className="max-w-[90%] sm:max-w-[1200px] mb-2 opacity-20 mx-auto" />
       <footer className="py-6">
-        <div className="max-w-[750px] mx-auto flex flex-col text-xs sm:text-sm text-[rgb(var(--foreground))] opacity-60 space-y-4 px-4 sm:px-0 text-center">
+        <div className="max-w-[1200px] mx-auto flex flex-col text-xs sm:text-sm text-[rgb(var(--foreground))] opacity-60 space-y-4 px-4 sm:px-0 text-center">
           <div className="text-sm font-semibold">Thanks for visiting :)</div>
           <div>
         Reach me at{" "}

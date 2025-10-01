@@ -3,9 +3,39 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight, Smartphone, Plane, Wrench, Gamepad } from "lucide-react"
+import { ChevronLeft, ChevronRight, Smartphone, Plane, Wrench, Gamepad, Brain, Heart } from "lucide-react"
 
 const projects = [
+  {
+    id: "sprout",
+    icon: <Heart className="w-6 h-6" />,
+    title: "Sprout – AI Mental Health iOS App",
+    description: "1st Place @ Build4Good 2025",
+    categories: ["React Native", "OpenAI API", "FastAPI"],
+    image: "/sprout-tn.png", // Thumbnail image
+    // video: "", // No video for now
+    href: "/projects/sprout",
+  },
+  {
+    id: "lockheed-2025",
+    icon: <Plane className="w-6 h-6" />,
+    title: "SWE Intern @ Lockheed Martin",
+    description: "Built scalable software solutions for teams",
+    categories: ["Angular.js", "C#", "TypeScript"],
+    image: "/lockheed-tn2.png", // Thumbnail image
+    // video: "/lockheedvid.mp4", Video to play on hover
+    href: "/projects/lockheed-2025",
+  },
+  {
+    id: "scale-ai-2025",
+    icon: <Brain className="w-6 h-6" />,
+    title: "Technical Advisor Intern @ Scale AI",
+    description: "Improved LLM reasoning & performance",
+    categories: ["AI/ML", "C++", "Python"],
+    image: "/scaleai.png", // Thumbnail image
+    video: "", // No video for now
+    href: "/projects/scale-ai-2025",
+  },
   {
     id: "lockheed",
     icon: <Plane className="w-6 h-6" />,
@@ -14,7 +44,7 @@ const projects = [
     categories: ["React.js", "AWS", "Alteryx", "SQL"],
     image: "/lockheed-tn.png", // Thumbnail image
     video: "/lockheedvid.mp4", // Video to play on hover
-    href: "/projects",
+    href: "/projects/lockheed",
   },
   {
     id: "trade-ai",
@@ -24,7 +54,7 @@ const projects = [
     categories: ["React Native", "AI/ML", "Azure"],
     image: "/trade-tn.png", // Thumbnail image
     video: "/tradevid.mp4", // Video to play on hover
-    href: "/projects",
+    href: "/projects/trade-ai",
   },
   {
     id: "pipeiq",
@@ -34,7 +64,7 @@ const projects = [
     categories: ["Next.js", "AI/ML", "AWS", "Python"],
     image: "/pipeiq-tn.png", // Thumbnail image
     video: "/pipeiq-vid.mp4", // Video to play on hover
-    href: "/projects",
+    href: "/projects/pipeiq",
   },
   {
     id: "roblox-game",
@@ -44,7 +74,7 @@ const projects = [
     categories: ["Lua", "Game Dev", "UI/UX Design"],
     image: "/Roblox.jpg", // Thumbnail image
     video: "/roblox.gif", // GIF to play on hover
-    href: "/projects",
+    href: "/projects/roblox-game",
   },
 ]
 
@@ -54,6 +84,10 @@ export function ProjectCarousel() {
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [cardWidth, setCardWidth] = useState(0)
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+  const [hasDragged, setHasDragged] = useState(false)
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -98,6 +132,36 @@ export function ProjectCarousel() {
     }
   }
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollRef.current) return
+    setIsDragging(true)
+    setHasDragged(false)
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft)
+    setScrollLeft(scrollRef.current.scrollLeft)
+    scrollRef.current.style.scrollBehavior = 'auto'
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !scrollRef.current) return
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX) * 1.5
+    
+    // If user moved more than 5px, consider it a drag
+    if (Math.abs(walk) > 5) {
+      setHasDragged(true)
+      scrollRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
+
+  const handleTouchEnd = () => {
+    if (!scrollRef.current) return
+    setIsDragging(false)
+    scrollRef.current.style.scrollBehavior = 'smooth'
+    
+    // Reset hasDragged after a short delay to allow click to process
+    setTimeout(() => setHasDragged(false), 100)
+  }
+
   return (
     <div className="relative project-section">
       {/* Header and buttons */}
@@ -106,7 +170,7 @@ export function ProjectCarousel() {
         <div className="flex gap-2">
           <button
             onClick={() => scroll("left")}
-            className={`p-2 rounded-full transition-colors ${canScrollLeft ? 'bg-white/15' : 'bg-white/5'}`}
+            className={`scroll-button p-2 rounded-full transition-colors ${canScrollLeft ? 'bg-white/15' : 'bg-white/5'}`}
             aria-label="Previous project"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -114,7 +178,7 @@ export function ProjectCarousel() {
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`p-2 rounded-full transition-colors ${canScrollRight ? 'bg-white/10' : 'bg-white/5'}`}
+            className={`scroll-button p-2 rounded-full transition-colors ${canScrollRight ? 'bg-white/10' : 'bg-white/5'}`}
             aria-label="Next project"
           >
             <ChevronRight className="w-4 h-4" />
@@ -132,13 +196,24 @@ export function ProjectCarousel() {
           setCanScrollLeft(target.scrollLeft > 0)
           setCanScrollRight(target.scrollLeft < target.scrollWidth - target.clientWidth)
         }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ scrollBehavior: 'smooth' }}
       >
         {projects.map((project) => (
           <div
             key={project.id}
             className="project-card"
           >
-            <Link href={project.href}>
+            <Link 
+              href={project.href}
+              onClick={(e) => {
+                if (hasDragged) {
+                  e.preventDefault()
+                }
+              }}
+            >
               <div
                 className="space-y-4 group" // Apply group class here
                 onMouseEnter={() => handleMouseEnter(project.id)}
@@ -212,10 +287,19 @@ export function ProjectCarousel() {
 
         .project-scroll {
           scroll-snap-type: x mandatory;
+          user-select: none; /* Prevent text selection while dragging */
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+
+        .project-scroll:active {
+          cursor: grabbing;
         }
 
         .project-card {
           scroll-snap-align: start;
+          pointer-events: ${isDragging ? 'none' : 'auto'}; /* Prevent clicks during drag */
         }
 
         @media (hover: none) {
