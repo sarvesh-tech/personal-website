@@ -89,7 +89,7 @@ export default function Home() {
                   className="inline-block align-middle w-auto h-[1.5em] px-1"
                 />
               </Link>{" "}
-              interested in swe, pm, and ui/ux design. I've built products reaching thousands of users.
+              interested in swe, pm, and ui/ux design. I've built products reaching 100k+ of users.
             </p>
 
             <p className="leading-loose">

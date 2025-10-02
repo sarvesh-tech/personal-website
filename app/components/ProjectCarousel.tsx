@@ -84,9 +84,10 @@ export function ProjectCarousel() {
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [cardWidth, setCardWidth] = useState(0)
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
+  
+  // Track scroll position for preventing navigation during drag
+  const scrollStartPos = useRef<number>(0)
+  const touchStartTime = useRef<number>(0)
   const [hasDragged, setHasDragged] = useState(false)
 
   useEffect(() => {
@@ -132,34 +133,25 @@ export function ProjectCarousel() {
     }
   }
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = () => {
     if (!scrollRef.current) return
-    setIsDragging(true)
+    scrollStartPos.current = scrollRef.current.scrollLeft
+    touchStartTime.current = Date.now()
     setHasDragged(false)
-    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft)
-    setScrollLeft(scrollRef.current.scrollLeft)
-    scrollRef.current.style.scrollBehavior = 'auto'
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollRef.current) return
-    const x = e.touches[0].pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 1.5
-    
-    // If user moved more than 5px, consider it a drag
-    if (Math.abs(walk) > 5) {
-      setHasDragged(true)
-      scrollRef.current.scrollLeft = scrollLeft - walk
-    }
   }
 
   const handleTouchEnd = () => {
     if (!scrollRef.current) return
-    setIsDragging(false)
-    scrollRef.current.style.scrollBehavior = 'smooth'
+    const scrollDiff = Math.abs(scrollRef.current.scrollLeft - scrollStartPos.current)
+    const touchDuration = Date.now() - touchStartTime.current
     
-    // Reset hasDragged after a short delay to allow click to process
-    setTimeout(() => setHasDragged(false), 100)
+    // Consider it a drag if scroll position changed by more than 5px
+    // or if the touch lasted more than 200ms (likely a scroll gesture)
+    if (scrollDiff > 5 || touchDuration > 200) {
+      setHasDragged(true)
+      // Reset after a short delay to allow next interaction
+      setTimeout(() => setHasDragged(false), 100)
+    }
   }
 
   return (
@@ -190,16 +182,18 @@ export function ProjectCarousel() {
       {/* Project cards */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto project-scroll pb-4"
+        className="flex gap-6 overflow-x-auto project-scroll pb-4 snap-x snap-mandatory"
         onScroll={(e) => {
           const target = e.target as HTMLDivElement
           setCanScrollLeft(target.scrollLeft > 0)
           setCanScrollRight(target.scrollLeft < target.scrollWidth - target.clientWidth)
         }}
         onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        style={{ scrollBehavior: 'smooth' }}
+        style={{ 
+          scrollBehavior: 'smooth',
+          WebkitOverflowScrolling: 'touch' // Smooth momentum scrolling on iOS
+        }}
       >
         {projects.map((project) => (
           <div
@@ -295,11 +289,6 @@ export function ProjectCarousel() {
 
         .project-scroll:active {
           cursor: grabbing;
-        }
-
-        .project-card {
-          scroll-snap-align: start;
-          pointer-events: ${isDragging ? 'none' : 'auto'}; /* Prevent clicks during drag */
         }
 
         @media (hover: none) {

@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Sarvesh Karunakaran',
   description: 'Software Engineer building exciting experiences',
+  themeColor: '#000000',
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -22,6 +23,12 @@ export const metadata = {
       },
     ],
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover', // This ensures the page extends into safe areas on iOS
 };
 
 export default function RootLayout({

@@ -97,7 +97,23 @@ export default function About() {
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
                   <h3 className="font-medium">Software Engineer Intern @ Lockheed Martin</h3>
-                  <p className="text-sm text-neutral-400">Developed aerospace software solutions</p>
+                  <p className="text-sm text-neutral-400">Built full-stack internal tools, increasing tracking efficiency by 50%</p>
+                </div>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">June 2025 - Aug 2025</span>
+              </div>
+              <hr className="border-dotted border-neutral-400 opacity-30" />
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
+                  <h3 className="font-medium">Engineering Intern – GenAI @ Scale AI</h3>
+                  <p className="text-sm text-neutral-400">Solved 60+ competitive programming problems to train LLM reasoning</p>
+                </div>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Feb 2025 - Aug 2025</span>
+              </div>
+              <hr className="border-dotted border-neutral-400 opacity-30" />
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
+                  <h3 className="font-medium">Software Engineer Intern @ Lockheed Martin</h3>
+                  <p className="text-sm text-neutral-400">Developed full-stack CRUD application for executive teams</p>
                 </div>
                 <span className="text-sm text-neutral-400 mt-2 md:mt-0">June 2024 - Aug 2024</span>
               </div>
@@ -105,7 +121,7 @@ export default function About() {
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
                   <h3 className="font-medium">Software Engineer Intern @ PipeIQ</h3>
-                  <p className="text-sm text-neutral-400">Built infrastructure management solutions</p>
+                  <p className="text-sm text-neutral-400">Created AI sales co-pilot, boosting accuracy by 27%</p>
                 </div>
                 <span className="text-sm text-neutral-400 mt-2 md:mt-0">May 2023 - June 2023</span>
               </div>
@@ -118,34 +134,50 @@ export default function About() {
             <div className="space-y-4">
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
+                  <h3 className="font-medium">Sprout – AI Mental Health iOS App</h3>
+                  <p className="text-sm text-neutral-400">🏆 1st Place @ Build4Good 2025 | AI-therapy app with OpenAI API + FastAPI</p>
+                </div>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Mar 2025</span>
+              </div>
+              <hr className="border-dotted border-neutral-400 opacity-30" />
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
                   <h3 className="font-medium">Trade AI</h3>
-                  <p className="text-sm text-neutral-400">Mobile trading assistant with AI-powered analysis</p>
+                  <p className="text-sm text-neutral-400">AI-powered mobile trading assistant with real-time market analysis</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Dec 2024 - Present</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">2025</span>
               </div>
               <hr className="border-dotted border-neutral-400 opacity-30" />
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
-                  <h3 className="font-medium">Immersive Roblox Experience</h3>
-                  <p className="text-sm text-neutral-400">Multiplayer game with dynamic environments</p>
+                  <h3 className="font-medium">Tidal Hackathon Website</h3>
+                  <p className="text-sm text-neutral-400">Organization website with 5,000+ views and 500+ signups</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Sep 2022 - Dec 2022</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">2025</span>
               </div>
               <hr className="border-dotted border-neutral-400 opacity-30" />
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
-                  <h3 className="font-medium">Portfolio Website</h3>
-                  <p className="text-sm text-neutral-400">Personal portfolio showcasing my projects and skills</p>
+                  <h3 className="font-medium">Wingmates</h3>
+                  <p className="text-sm text-neutral-400">🏆 1st Place @ TAMUHack 2024 | Mobile app reducing cultural barriers</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Jun 2022 - Aug 2022</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">2024</span>
               </div>
               <hr className="border-dotted border-neutral-400 opacity-30" />
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
-                  <h3 className="font-medium">E-commerce Platform</h3>
-                  <p className="text-sm text-neutral-400">Online store with a seamless shopping experience</p>
+                  <h3 className="font-medium">Cupertino-text</h3>
+                  <p className="text-sm text-neutral-400">Custom text animation npm package with 200+ downloads</p>
                 </div>
-                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Mar 2022 - May 2022</span>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">2024</span>
+              </div>
+              <hr className="border-dotted border-neutral-400 opacity-30" />
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
+                  <h3 className="font-medium">Cross-Platform Roblox Game</h3>
+                  <p className="text-sm text-neutral-400">Multiplayer horror game with 200,000+ users</p>
+                </div>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">2022</span>
               </div>
             </div>
           </BentoCard>

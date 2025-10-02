@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* iOS safe area insets */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital@1&family=Sofia+Sans+Extra+Condensed:wght@500&display=swap");
 
 :root {
@@ -42,6 +50,7 @@ html {
   flex: 0 0 auto;
   width: calc(100vw - 48px);
   max-width: 500px;
+  scroll-snap-align: start;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added smooth transition */
 }
 
