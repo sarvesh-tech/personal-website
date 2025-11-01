@@ -76,7 +76,7 @@ export default function Home() {
         <FadeIn delay={150}>
           <div className="space-y-4 text-xs sm:text-sm leading-relaxed mb-6 max-w-[600px]">
             <p className="leading-loose">
-              Howdy! I'm Sarvesh, a junior computer engineering student at{" "}
+              Howdy! I'm Sarvesh, a senior computer engineering student at{" "}
               <Link
                 href="https://www.tamu.edu"
                 target="_blank"
