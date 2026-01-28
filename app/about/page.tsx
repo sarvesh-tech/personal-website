@@ -134,6 +134,14 @@ export default function About() {
             <div className="space-y-4">
               <div className="flex flex-col md:flex-row justify-between">
                 <div>
+                  <h3 className="font-medium">AIsle0 – Real-Time Airline Coordination Platform</h3>
+                  <p className="text-sm text-neutral-400">🏆 1st Place – American Airlines Challenge @ TAMUHack 2026 | 75k AAdvantage Miles</p>
+                </div>
+                <span className="text-sm text-neutral-400 mt-2 md:mt-0">Jan 2026</span>
+              </div>
+              <hr className="border-dotted border-neutral-400 opacity-30" />
+              <div className="flex flex-col md:flex-row justify-between">
+                <div>
                   <h3 className="font-medium">Sprout – AI Mental Health iOS App</h3>
                   <p className="text-sm text-neutral-400">🏆 1st Place @ Build4Good 2025 | AI-therapy app with OpenAI API + FastAPI</p>
                 </div>

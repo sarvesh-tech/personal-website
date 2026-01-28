@@ -9,6 +9,17 @@ import { sofiaSans } from "../utils/fonts"
 
 const projects = [
   {
+    id: "aisle0",
+    date: "Jan 2026",
+    title: "AIsle0 – Real-Time Airline Coordination Platform",
+    description: "*1st Place – American Airlines Challenge @ TAMUHack 2026*; Won *75k AAdvantage Miles*. Built web and mobile platform connecting airline ground and flight crews with real-time task visibility. Implemented AI-powered hazard detection, WebSocket communication, and cross-platform synchronization using React, React Native, Supabase, and OpenAI API.",
+    tech: ["React", "TypeScript", "React Native", "Supabase", "OpenAI API", "WebSockets", "Expo", "Vite", "Postgres"],
+    image: "/aisle0tn.png",
+    category: "Personal Project",
+    github: "https://github.com/sarvesh-tech/tamuhack26",
+    web: "https://devpost.com/software/idk-yet-8ba2hz"
+  },
+  {
     id: "sprout",
     date: "Mar 2025",
     title: "Sprout – AI Mental Health iOS App",

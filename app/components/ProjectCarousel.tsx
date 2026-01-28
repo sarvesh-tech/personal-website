@@ -7,6 +7,16 @@ import { ChevronLeft, ChevronRight, Smartphone, Plane, Wrench, Gamepad, Brain, H
 
 const projects = [
   {
+    id: "aisle0",
+    icon: <Plane className="w-6 h-6" />,
+    title: "AIsle0 – Real-Time Airline Coordination",
+    description: "1st Place @ TAMUHack 2026",
+    categories: ["Vite", "AgenticAI", "Supabase"],
+    image: "/aisle0tn.png", // Thumbnail image
+    // video: "", // No video for now
+    href: "/projects/aisle0",
+  },
+  {
     id: "sprout",
     icon: <Heart className="w-6 h-6" />,
     title: "Sprout – AI Mental Health iOS App",

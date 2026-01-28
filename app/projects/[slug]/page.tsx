@@ -14,8 +14,8 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  // If not sprout, show coming soon
-  if (params.slug !== "sprout") {
+  // If not sprout or aisle0, show coming soon
+  if (params.slug !== "sprout" && params.slug !== "aisle0") {
   return (
     <div className="min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
       <FadeIn delay={0}>
@@ -116,6 +116,442 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </FadeIn>
           </article>
+        </main>
+      </div>
+    )
+  }
+
+  // AIsle0 detailed page
+  if (params.slug === "aisle0") {
+    return (
+      <div className="min-h-screen bg-[rgb(var(--background))] text-[rgb(var(--foreground))]">
+        <FadeIn delay={0}>
+          <header className="px-6 py-6 flex justify-between items-center max-w-[1200px] mx-auto">
+            <Link
+              href="/"
+              className={`text-[rgb(var(--foreground))] hover:opacity-70 transition-opacity text-3xl ${sofiaSans.className} flex items-center`}
+            >
+              SARVESH K
+            </Link>
+            <nav className="space-x-4 md:space-x-8">
+              <Link
+                href="/projects"
+                className="text-sm text-[rgb(var(--foreground))] hover:underline transition-all duration-300"
+              >
+                Work
+              </Link>
+              <Link href="/about" className="text-sm text-[rgb(var(--accent))] hover:underline transition-all duration-300">
+                About
+              </Link>
+            </nav>
+          </header>
+        </FadeIn>
+
+        <main className="px-6 py-12 max-w-[1200px] mx-auto">
+          {/* Back Button */}
+          <FadeIn delay={100}>
+            <Link
+              href="/projects"
+              className="inline-flex items-center text-[rgb(var(--foreground))] hover:text-[rgb(var(--accent))] mb-12 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Projects
+            </Link>
+          </FadeIn>
+
+          {/* Hero Section */}
+          <FadeIn delay={100}>
+            <div className="mb-16 space-y-6">
+              <Link 
+                href="https://tamuhack.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 rounded-full bg-[rgb(var(--accent))]/10 text-[rgb(var(--accent))] text-xs font-medium mb-4 hover:bg-[rgb(var(--accent))]/20 transition-all duration-300"
+              >
+                🏆 1st Place – American Airlines Challenge @ TAMUHack 2026 | Won 75k AAdvantage Miles
+              </Link>
+              <h1 className="text-3xl sm:text-5xl font-normal tracking-tight leading-tight">
+                AIsle0
+              </h1>
+              <p className="text-sm sm:text-base text-[rgb(var(--foreground))] opacity-70 max-w-3xl">
+                A guided, real-time inspection platform that connects airline ground and flight crews by flight number, providing live visibility into pre- and post-flight task status to improve communication during aircraft turnarounds.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Hero Image */}
+          <FadeIn delay={150}>
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-24 group">
+              <Image
+                src="/aisle0tn.png"
+                alt="AIsle0 Platform Preview"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </FadeIn>
+
+          {/* Project Details - Horizontal Cards */}
+          <div className="mb-32">
+            <FadeIn delay={200}>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-12 border-y border-[rgb(var(--foreground))]/10">
+                <div className="space-y-2 hover:transform hover:scale-105 transition-transform duration-300">
+                  <h3 className="text-sm text-[rgb(var(--foreground))] opacity-50 uppercase tracking-wider">Role</h3>
+                  <p className="text-lg font-medium">Lead Developer</p>
+                  <p className="text-sm opacity-70">Designed UI/UX + Built Backend with Supabase Edge Functions and websockets. Also developed agentic AI tool calling functionality.</p>
+                </div>
+                
+                <div className="space-y-2 hover:transform hover:scale-105 transition-transform duration-300">
+                  <h3 className="text-sm text-[rgb(var(--foreground))] opacity-50 uppercase tracking-wider">Timeline</h3>
+                  <p className="text-lg font-medium">Jan. 2026</p>
+                  <p className="text-sm opacity-70">24-hour Hackathon</p>
+                </div>
+                
+                <div className="space-y-2 hover:transform hover:scale-105 transition-transform duration-300">
+                  <h3 className="text-sm text-[rgb(var(--foreground))] opacity-50 uppercase tracking-wider">Team</h3>
+                  <p className="text-lg font-medium">4 People</p>
+                  <p className="text-sm opacity-70">TAMUHack 2026</p>
+                </div>
+                
+                <div className="space-y-2 hover:transform hover:scale-105 transition-transform duration-300">
+                  <h3 className="text-sm text-[rgb(var(--foreground))] opacity-50 uppercase tracking-wider">Skills</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">React</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">TypeScript</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">React Native</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">Supabase</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">OpenAI API</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">WebSockets</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">Expo</span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">Vite</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Project Overview */}
+          <FadeIn delay={250}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-8 tracking-tight">Project Overview</h2>
+              <div className="bg-white/5 p-8 sm:p-12 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <p className="text-sm leading-relaxed opacity-80 mb-4">
+                  AIsle0 is a web and mobile platform designed to solve a critical gap in airline operations: workers assigned to the same flight often have no shared, flight-specific way to communicate. Ground crews, flight crews, and service teams rely on fragmented tools and assumptions, which can lead to delays, miscoordination, and safety concerns.
+                </p>
+                <p className="text-sm leading-relaxed opacity-80">
+                  By connecting airline workers by flight number and providing real-time visibility into pre- and post-flight task status (such as fueling progress, baggage handling, and equipment checks), AIsle0 helps teams coordinate safely, avoid equipment conflicts, and sequence work more efficiently during aircraft turnaround—making work smoother, safer, and less stressful for everyone involved.
+                </p>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* Demo Video */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">Demo Video</h2>
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 mb-8" style={{ backgroundColor: '#1E1E1E' }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full rounded-2xl"
+                  src="https://www.youtube.com/embed/EQRr3HAQqEg"
+                  title="AIsle0 Demo - TAMUHack 2026 Winner"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link 
+                  href="https://devpost.com/software/idk-yet-8ba2hz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 text-sm"
+                >
+                  View on Devpost →
+                </Link>
+                <Link 
+                  href="https://github.com/sarvesh-tech/tamuhack26"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 text-sm"
+                >
+                  View on GitHub →
+                </Link>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* I. Inspiration */}
+          <FadeIn delay={300}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">I.</span> Inspiration
+              </h2>
+              <div className="p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-[rgb(var(--accent))]/30 transition-all duration-300">
+                <p className="text-sm opacity-80 leading-relaxed mb-4">
+                  AIsle0 was inspired by a simple gap in airline operations: workers assigned to the same flight often have no shared, flight-specific way to communicate. Ground crews, flight crews, and service teams rely on fragmented tools and assumptions, which can lead to delays and miscoordination.
+                </p>
+                <p className="text-sm opacity-80 leading-relaxed">
+                  We set out to build a platform that improves communication during aircraft turnarounds, making work smoother, safer, and a little less stressful for the people who keep flights moving.
+                </p>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* II. What It Does */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">II.</span> What It Does
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10">
+                  <h3 className="text-base font-medium">Core Features</h3>
+                  <ul className="text-sm opacity-80 space-y-3">
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">✈️</span>
+                      <span>Flight-specific crew coordination and communication</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">📱</span>
+                      <span>Real-time task status updates across web and mobile</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">🔄</span>
+                      <span>Live sync between ground crews and flight crews</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">⚡</span>
+                      <span>Instant notifications for task updates and conflicts</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10">
+                  <h3 className="text-base font-medium">Use Cases</h3>
+                  <ul className="text-sm opacity-80 space-y-3">
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">⛽</span>
+                      <span>Fueling status tracking (in progress, completed, restricted)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">🧳</span>
+                      <span>Baggage handling coordination and updates</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">🔧</span>
+                      <span>Equipment conflict prevention and safety checks</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-[rgb(var(--accent))]">📊</span>
+                      <span>AI-powered hazard detection and risk tagging</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* III. Tech Stack */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">III.</span> Tech Stack
+              </h2>
+              
+              {/* Tech Stack Image */}
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 mb-12" style={{ backgroundColor: '#1E1E1E' }}>
+                <Image
+                  src="/aisle0techstack (1).png"
+                  alt="AIsle0 Tech Stack Architecture"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20">
+                  <h4 className="text-sm font-medium mb-4">💻 Web App</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• React + TypeScript</li>
+                    <li>• Vite for fast builds</li>
+                    <li>• Node.js backend</li>
+                  </ul>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20">
+                  <h4 className="text-sm font-medium mb-4">📱 Mobile App</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• React Native + Expo</li>
+                    <li>• Cross-platform iOS/Android</li>
+                    <li>• ngrok for local testing</li>
+                  </ul>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-green-500/10 to-transparent border border-green-500/20">
+                  <h4 className="text-sm font-medium mb-4">🗄️ Backend</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• Supabase (Auth, API, DB)</li>
+                    <li>• Postgres Database</li>
+                    <li>• WebSockets for real-time</li>
+                    <li>• Edge Functions</li>
+                  </ul>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20">
+                  <h4 className="text-sm font-medium mb-4">🤖 AI Layer</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• OpenAI API integration</li>
+                    <li>• AI Agent with Tool Calls</li>
+                    <li>• Risk analysis & tagging</li>
+                  </ul>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/20">
+                  <h4 className="text-sm font-medium mb-4">🔗 Integrations</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• American Airlines API</li>
+                    <li>• Hosted on Render</li>
+                    <li>• Real-time data sync</li>
+                  </ul>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-pink-500/10 to-transparent border border-pink-500/20">
+                  <h4 className="text-sm font-medium mb-4">🏗️ Infrastructure</h4>
+                  <ul className="text-xs opacity-80 space-y-2">
+                    <li>• Supabase real-time features</li>
+                    <li>• WebSocket connections</li>
+                    <li>• Edge function deployment</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* IV. Database Architecture */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">IV.</span> Database Architecture
+              </h2>
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10" style={{ backgroundColor: '#1E1E1E' }}>
+                <Image
+                  src="/aisle0dbschema.png"
+                  alt="AIsle0 Database Schema"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* V. Challenges */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">V.</span> Challenges We Ran Into
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[rgb(var(--accent))]/30 transition-all duration-300">
+                  <h3 className="text-base font-medium mb-4">🔍 User Research</h3>
+                  <p className="text-sm opacity-80 leading-relaxed">
+                    User research at TAMUHack 2026 was challenging at first, as airline operations are a specialized domain with limited direct access to end users. After iterating on several ideas, we converged on a concept that balanced realism with feasibility.
+                  </p>
+                </div>
+                
+                <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[rgb(var(--accent))]/30 transition-all duration-300">
+                  <h3 className="text-base font-medium mb-4">⚡ Real-Time Implementation</h3>
+                  <p className="text-sm opacity-80 leading-relaxed">
+                    On the technical side, implementing real-time updates and socket-based communication was difficult due to the limited structure and constraints of Supabase's real-time features. We had to architect custom solutions to achieve seamless synchronization.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* VI. Accomplishments */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">VI.</span> Accomplishments We're Proud Of
+              </h2>
+              <div className="p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-[rgb(var(--accent))]/10 to-transparent border border-[rgb(var(--accent))]/20">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-base font-medium mb-4">🎨 Design Excellence</h3>
+                    <p className="text-sm opacity-80 leading-relaxed">
+                      In terms of design, we are proud of the custom drawings and gifs that bring the platform to life and make complex airline operations more approachable and intuitive.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-medium mb-4">🔧 Technical Achievement</h3>
+                    <p className="text-sm opacity-80 leading-relaxed">
+                      For technicality, we are proud of the well-designed structure of the platform to connect users, allowing the web app to connect with the mobile app, alongside having real-time updates between airline workers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* VII. What We Learned */}
+          <FadeIn delay={100}>
+            <section className="mb-32">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">VII.</span> What We Learned
+              </h2>
+              <div className="bg-white/5 p-8 sm:p-12 rounded-2xl border border-white/10">
+                <p className="text-sm opacity-80 leading-relaxed mb-4">
+                  Building AIsle0 taught us how complex real-world operational systems can be, and how important clear communication is when multiple teams work in parallel under safety constraints.
+                </p>
+                <p className="text-sm opacity-80 leading-relaxed mb-4">
+                  We also learned how to design and implement real-time systems under tight hackathon timelines, managing WebSocket connections, database synchronization, and cross-platform compatibility.
+                </p>
+                <p className="text-sm opacity-80 leading-relaxed">
+                  And yes, we made some great friends along the way! 😊
+                </p>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* VIII. What's Next */}
+          <FadeIn delay={100}>
+            <section className="mb-24">
+              <h2 className="text-xl sm:text-2xl font-normal mb-12 tracking-tight">
+                <span className="text-[rgb(var(--accent))]">VIII.</span> What's Next for AIsle0
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  <h4 className="font-medium mb-3 text-sm">📋 Expanded Task Types</h4>
+                  <p className="text-xs opacity-70">Beyond fueling and baggage handling to cover all turnaround operations</p>
+                </div>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  <h4 className="font-medium mb-3 text-sm">🔐 Role-Based Permissions</h4>
+                  <p className="text-xs opacity-70">Adding safety constraints and access controls for different crew roles</p>
+                </div>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  <h4 className="font-medium mb-3 text-sm">📊 Analytics Dashboard</h4>
+                  <p className="text-xs opacity-70">Integrating analytics to identify turnaround bottlenecks and optimize efficiency</p>
+                </div>
+                <div className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  <h4 className="font-medium mb-3 text-sm">💰 Funding Goals</h4>
+                  <p className="text-xs opacity-70">And… maybe a million-dollar funding 😉</p>
+                </div>
+              </div>
+            </section>
+          </FadeIn>
+
+          {/* Back to Top */}
+          <FadeIn delay={100}>
+            <div className="text-center py-12">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 text-[rgb(var(--foreground))] hover:text-[rgb(var(--accent))] transition-colors group"
+              >
+                <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                Back to Top
+              </button>
+            </div>
+          </FadeIn>
         </main>
       </div>
     )
